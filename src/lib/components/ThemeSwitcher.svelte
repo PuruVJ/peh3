@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-  <meta name="theme-color" content={['white', '#13132a'][currentThemeIndex]} />
+  <meta name="theme-color" content={['white', 'hsl(0, 0%, 11%)'][currentThemeIndex]} />
 </svelte:head>
 
 <button aria-label={themes[currentThemeIndex]} on:click={nextTheme}>
