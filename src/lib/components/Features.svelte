@@ -1,9 +1,11 @@
 <script>
+  import { i18n } from '$lib/stores/i18n.store';
+
   import FeatureBox from './FeatureBox.svelte';
 </script>
 
 <section class="container width-60">
-  <h2>Services</h2>
+  <h2>{$i18n.servicesHeading}</h2>
   <div class="center-box">
     <FeatureBox>
       <span slot="title">Phaco Surgery</span>
