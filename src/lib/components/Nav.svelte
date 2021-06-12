@@ -1,0 +1,60 @@
+<script lang="ts">
+  import ThemeSwitcher from './ThemeSwitcher.svelte';
+  import IntersectionObserver from 'svelte-intersection-observer';
+  import { theme } from '$lib/stores/theme.store';
+
+  let smigget: HTMLDivElement;
+  let smiggetVisible = true;
+</script>
+
+<header class:shadow={!smiggetVisible} class:night={$theme === 'night'}>
+  <div class="logo">
+    <img src="/PEH-logo (2).png" alt="Puru Eye Hospital logo" />
+  </div>
+  <span class="spacer" />
+  <ThemeSwitcher />
+</header>
+
+<IntersectionObserver element={smigget} bind:intersecting={smiggetVisible}>
+  <div bind:this={smigget} class="smigget" />
+</IntersectionObserver>
+
+<style lang="scss">
+  .logo {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    img {
+      max-height: 2.5rem;
+    }
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: calc(50% - 30.9%);
+    z-index: 9;
+
+    border-radius: 0 0 1rem 1rem;
+
+    width: 61.8%;
+    height: 3.2rem;
+
+    padding: 0 0.6rem;
+
+    background-color: var(--app-color-shell);
+
+    &.shadow {
+      box-shadow: 0 3.4px 6.3px rgba(0, 0, 0, 0.1), 0 27px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    &.night.shadow {
+      background-color: #383a3e;
+    }
+  }
+</style>
