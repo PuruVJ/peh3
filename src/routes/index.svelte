@@ -1,4 +1,5 @@
 <script lang="ts">
+  import CtaButton from '$lib/components/CTAButton.svelte';
   import Features from '$lib/components/Features.svelte';
   import { fadeIn, fadeOut } from '$lib/fade';
 </script>
@@ -11,10 +12,11 @@
   <section class="top-area">
     <h1>Puru Eye Hospital</h1>
     <h2>Phaco Surgery & Lasik center</h2>
-    <button>Book an appointment</button>
+    <br />
+    <CtaButton />
   </section>
 
-  <br /><br />
+  <br />
 
   <Features />
 
@@ -56,6 +58,7 @@
     }
 
     h2 {
+      font-size: 2.618rem;
       color: hsla(var(--app-color-dark-hsl), 0.9);
     }
   }
@@ -72,6 +75,18 @@
 
     .description {
       font-size: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .top-area {
+      h1 {
+        font-size: 2.6rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
     }
   }
 </style>

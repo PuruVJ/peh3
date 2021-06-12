@@ -10,12 +10,17 @@
   .container {
     border-radius: 16px;
 
-    background-color: var(--app-color-dark);
+    background-color: hsla(var(--app-color-dark-hsl), 0.1);
 
     padding: 1rem;
 
+    h3 {
+      font-weight: 500;
+      line-height: 1.618;
+    }
+
     * {
-      color: var(--app-color-dark-contrast);
+      color: var(--app-color-dark);
     }
   }
 </style>

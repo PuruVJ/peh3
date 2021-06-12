@@ -37,7 +37,6 @@
 
     position: fixed;
     top: 0;
-    left: calc(50% - 30.9%);
     z-index: 9;
 
     border-radius: 0 0 1rem 1rem;
@@ -54,7 +53,13 @@
     }
 
     &.night.shadow {
-      background-color: #383a3e;
+      background-color: #2a2c2f;
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    header {
+      width: 95% !important;
     }
   }
 </style>

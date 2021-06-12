@@ -6,7 +6,7 @@ body.morning {
   --app-color-primary-contrast: hsl(354, 25%, 8%);
   --app-color-primary-contrast-hsl: 354, 25%, 8%;
 
-  --app-background-primary: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  // --app-background-primary: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 
   // Dark
   --app-color-dark: hsl(240, 3%, 11%);
@@ -23,10 +23,10 @@ body.morning {
   --app-color-shell: #fff;
 
   --app-font-family-heading: 'PT Serif', serif;
-  --app-font-family-body: -apple-system, BlinkMacSystemFont, 'Quicksand', 'Helvetica Neue',
+  --app-font-family-body: -apple-system, BlinkMacSystemFont, 'Poppins', 'Helvetica Neue',
     'Helvetica', 'Arial', sans-serif;
 
-  --app-outline-shadow: 0 0 0 3px hsla(var(--app-color-primary-hsl), 0.4);
+  --app-outline-shadow: 0 0 0 4px hsla(var(--app-color-dark-hsl), 0.3);
 
   // --app-color-grey-50: #fafafa;
   // --app-color-grey-50-hsl: 0, 0%, 98%;
@@ -55,7 +55,7 @@ body.morning {
   // --app-color-grey-800: #424242;
   // --app-color-grey-800-hsl: 0, 0%, 26%;
 
-  --app-color-grey-900: #212121;
+  // --app-color-grey-900: #212121;
   // --app-color-grey-900-hsl: 0, 0%, 13%;
 
   // --app-color-grey-A100: #d5d5d5;
