@@ -1,5 +1,6 @@
 <script lang="ts">
   import ThemeSwitcher from './ThemeSwitcher.svelte';
+  import LangSwitcher from './LangSwitcher.svelte';
   import IntersectionObserver from 'svelte-intersection-observer';
   import { theme } from '$lib/stores/theme.store';
 
@@ -12,7 +13,10 @@
     <img src="/PEH-logo-final.png" alt="Puru Eye Hospital logo" />
   </div>
   <span class="spacer" />
-  <ThemeSwitcher />
+  <span>
+    <LangSwitcher />
+    <ThemeSwitcher />
+  </span>
 </header>
 
 <IntersectionObserver element={smigget} bind:intersecting={smiggetVisible}>

@@ -2,6 +2,7 @@
   import CtaButton from '$lib/components/CTAButton.svelte';
   import Features from '$lib/components/Features.svelte';
   import { fadeIn, fadeOut } from '$lib/fade';
+  import { i18n, language } from '$lib/stores/i18n.store';
 </script>
 
 <svelte:head>
@@ -9,9 +10,9 @@
 </svelte:head>
 
 <main in:fadeIn out:fadeOut>
-  <section class="top-area">
-    <h1>Puru Eye Hospital</h1>
-    <h2>Phaco Surgery & Lasik center</h2>
+  <section class="top-area" class:hindi={$language === 'hi'}>
+    <h1>{$i18n.puruEyeHospital}</h1>
+    <h2>{$i18n.phacoSurgeryCenter}</h2>
     <br />
     <CtaButton />
   </section>
@@ -66,6 +67,13 @@
     h2 {
       font-size: 2.618rem;
       color: hsla(var(--app-color-dark-hsl), 0.9);
+    }
+
+    &.hindi {
+      h1,
+      h2 {
+        line-height: 1.4;
+      }
     }
   }
 

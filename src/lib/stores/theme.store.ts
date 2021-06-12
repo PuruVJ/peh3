@@ -5,22 +5,17 @@ const theme = writable<'morning' | 'night'>('morning');
 
 export { theme };
 
-let initVal = '';
+let initialized = false;
 theme.subscribe((val) => {
   if (!browser) return;
 
   // Don't do anything if its first value
-  if (!initVal) {
-    initVal = val;
-    return;
-  }
+  if (!initialized) return void (initialized = true);
 
-  const body = document.body;
+  const bodyClass = document.body.classList;
 
-  body.classList.remove('morning', 'night');
-  body.classList.add(val);
+  bodyClass.remove('morning', 'night');
+  bodyClass.add(val);
 
   localStorage.setItem('theme', val);
-
-  initVal = val;
 });
