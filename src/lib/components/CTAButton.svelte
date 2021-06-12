@@ -3,7 +3,7 @@
   import Icon from './Icon.svelte';
 </script>
 
-<a href="">
+<a href="tel:+919414065020">
   <span> <Icon fill="var(--app-color-dark-contrast)" path={mdiPhone} /></span>
   Book an appointment
 </a>

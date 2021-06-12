@@ -34,9 +34,12 @@ h4 {
   line-height: 1.618;
 }
 
-h1,
-h2 {
+h1 {
   font-size: 2.618rem * 1.618;
+}
+
+h2 {
+  font-size: 2.618rem * 1.414;
 }
 
 h3 {
@@ -98,6 +101,15 @@ button {
   }
 }
 
+hr {
+  width: 20rem;
+  height: 0.5rem;
+
+  border: none;
+
+  background-color: var(--app-color-dark);
+}
+
 ::selection {
   background-color: hsla(var(--app-color-dark-hsl), 0.2);
 }
@@ -106,22 +118,22 @@ button {
   width: 100%;
 }
 
-// ::-webkit-scrollbar {
-//   background-color: transparent;
-//   width: 15px;
-// }
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 15px;
+}
 
-// ::-webkit-scrollbar-thumb {
-//   background-color: hsla(var(--app-color-dark-hsl), 0.8);
-//   border: 3px solid transparent;
-//   border-radius: 8px;
-//   background-clip: content-box;
-//   transition: all 200ms;
-// }
+::-webkit-scrollbar-thumb {
+  background-color: hsla(var(--app-color-dark-hsl), 0.8);
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background-clip: content-box;
+  transition: all 200ms;
+}
 
-// ::-webkit-scrollbar-thumb:hover {
-//   background-color: hsla(var(--app-color-dark-hsl), 1);
-// }
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(var(--app-color-dark-hsl), 1);
+}
 
 @media screen and (max-width: 1100px) {
   #svelte {

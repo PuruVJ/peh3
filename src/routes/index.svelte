@@ -21,17 +21,23 @@
   <Features />
 
   <br />
+  <br />
   <hr />
   <br />
+  <br />
 
-  <section class="about-doctor width-60">
-    <!-- svelte-ignore a11y-img-redundant-alt -->
-    <div><img src="/gallery/docor-photo.jpg" alt="Dr Sandeep Vijay photo" /></div>
-    <p class="description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quae libero quasi, minima
-      recusandae architecto impedit laudantium eaque quo esse doloremque quam quaerat eos fugiat id
-      itaque odio velit aliquam.
-    </p>
+  <section class="about-doctor">
+    <h2>About Doctor</h2>
+    <br />
+    <div class="photo-desc">
+      <!-- svelte-ignore a11y-img-redundant-alt -->
+      <div class="photo"><img src="/docor-photo.png" alt="Dr Sandeep Vijay photo" /></div>
+      <p class="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quae libero quasi, minima
+        recusandae architecto impedit laudantium eaque quo esse doloremque quam quaerat eos fugiat
+        id itaque odio velit aliquam.
+      </p>
+    </div>
   </section>
 </main>
 
@@ -64,17 +70,25 @@
   }
 
   .about-doctor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    .photo-desc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
 
-    img {
-      max-width: 70%;
+      .photo {
+        display: flex;
 
-      border-radius: 2rem;
-    }
+        img {
+          max-width: 80%;
 
-    .description {
-      font-size: 2rem;
+          border-radius: 50%;
+          box-shadow: 0 0 0 0.75rem var(--app-color-dark);
+        }
+      }
+
+      .description {
+        font-size: 1.6rem;
+      }
     }
   }
 
@@ -86,6 +100,17 @@
 
       h2 {
         font-size: 1.6rem;
+      }
+    }
+
+    .about-doctor {
+      .photo-desc {
+        grid-template-columns: 1fr;
+
+        .photo {
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }
