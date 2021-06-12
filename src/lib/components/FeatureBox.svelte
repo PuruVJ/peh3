@@ -10,12 +10,12 @@
   .container {
     border-radius: 16px;
 
-    background-image: var(--app-background-primary);
+    background-color: var(--app-color-dark);
 
     padding: 1rem;
 
     * {
-      color: var(--app-color-grey-900);
+      color: var(--app-color-dark-contrast);
     }
   }
 </style>
