@@ -9,7 +9,7 @@
 
 <header class:shadow={!smiggetVisible} class:night={$theme === 'night'}>
   <div class="logo">
-    <img src="/PEH-logo (2).png" alt="Puru Eye Hospital logo" />
+    <img src="/PEH-logo-final.png" alt="Puru Eye Hospital logo" />
   </div>
   <span class="spacer" />
   <ThemeSwitcher />
