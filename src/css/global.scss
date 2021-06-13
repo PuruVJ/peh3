@@ -102,12 +102,18 @@ button {
 }
 
 hr {
+  max-width: 95%;
   width: 20rem;
   height: 0.5rem;
 
   border: none;
 
   background-color: var(--app-color-dark);
+}
+
+strong,
+b {
+  font-weight: 600;
 }
 
 ::selection {
