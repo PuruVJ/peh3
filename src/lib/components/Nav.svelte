@@ -57,7 +57,7 @@
     }
 
     &.night.shadow {
-      background-color: #2a2c2f;
+      background-color: #23252c;
     }
   }
 

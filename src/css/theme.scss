@@ -1,16 +1,8 @@
 body,
 body.morning {
-  // Primary
-  --app-color-primary: #ff9a9e;
-  --app-color-primary-hsl: 358, 100%, 80%;
-  --app-color-primary-contrast: hsl(354, 25%, 8%);
-  --app-color-primary-contrast-hsl: 354, 25%, 8%;
-
-  // --app-background-primary: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-
   // Dark
-  --app-color-dark: hsl(240, 3%, 11%);
-  --app-color-dark-hsl: 240, 3%, 11%;
+  --app-color-dark: #171a21;
+  --app-color-dark-hsl: 222, 18%, 11%;
   --app-color-dark-contrast: hsl(240, 24%, 100%);
   --app-color-dark-contrast-hsl: 240, 24%, 100%;
 
@@ -85,10 +77,10 @@ body.night {
   --app-color-dark-contrast-hsl: 0, 0%, 11%;
 
   /* // Light */
-  --app-color-light: hsl(240, 3%, 11%);
-  --app-color-light-hsl: 240, 3%, 11%;
+  --app-color-light: #171a21;
+  --app-color-light-hsl: 222, 18%, 11%;
   --app-color-light-contrast: hsl(240, 24%, 100%);
   --app-color-light-contrast-hsl: 240, 24%, 100%;
 
-  --app-color-shell: hsl(0, 0%, 11%);
+  --app-color-shell: #171a21;
 }

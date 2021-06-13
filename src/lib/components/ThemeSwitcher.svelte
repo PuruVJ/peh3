@@ -22,7 +22,7 @@
 
     currentThemeIndex = !localTheme
       ? browserPrefersDark
-        ? 2
+        ? 1
         : 0
       : themes.indexOf(localTheme as any);
   });
@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-  <meta name="theme-color" content={['white', 'hsl(0, 0%, 11%)'][currentThemeIndex]} />
+  <meta name="theme-color" content={['white', '#23252c'][currentThemeIndex]} />
 </svelte:head>
 
 <button aria-label={themes[currentThemeIndex]} on:click={nextTheme}>
