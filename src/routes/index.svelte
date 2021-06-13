@@ -32,7 +32,7 @@
     <div class="photo-desc">
       <!-- svelte-ignore a11y-img-redundant-alt -->
       <div class="photo">
-        <img src="../../static/gallery/cover banner.jpg" alt="Dr Sandeep Vijay photo" />
+        <img src="/gallery/cover-banner.jpg" alt="Dr Sandeep Vijay photo" />
       </div>
       <p class="description">
         <strong>Puru Eye Hospital, Lasik Laser & Phaco Surgery Centre</strong> is a well recognized
