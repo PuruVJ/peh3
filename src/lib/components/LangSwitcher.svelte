@@ -4,7 +4,7 @@
 
 <svelte:window lang={$language} />
 
-<a href="/{$language === 'en' ? 'hi' : 'en'}">
+<a href="/{$language === 'en' ? 'hi' : 'en'}" sveltekit:noscroll>
   {#if $language === 'hi'}
     A
   {:else}
