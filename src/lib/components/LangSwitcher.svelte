@@ -1,49 +1,35 @@
 <script lang="ts">
   import { language } from '$lib/stores/i18n.store';
-  import type { Language } from '$lib/stores/i18n.store';
-  import { onMount } from 'svelte';
-
-  // List of themes
-  const languages: Language[] = ['en', 'hi'];
-
-  function nextLanguage() {
-    $language = $language === 'hi' ? 'en' : 'hi';
-  }
-
-  onMount(() => {
-    // Initialize with localstorage
-    const localLang = localStorage.getItem('lang') as Language;
-    const userLangIsHindi = navigator.language === 'hi';
-
-    $language = localLang || (userLangIsHindi ? 'hi' : 'en');
-  });
-
-  $: console.log($language);
 </script>
 
 <svelte:window lang={$language} />
 
-<button on:click={nextLanguage}>
+<a href="/{$language === 'en' ? 'hi' : 'en'}">
   {#if $language === 'hi'}
     A
   {:else}
     अ
   {/if}
-</button>
+</a>
 
 <style lang="scss">
-  button {
+  a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
     width: 2.3rem;
     height: 2.3rem;
 
     font-size: 1.3rem;
-
-    fill: var(--app-color-dark);
+    text-align: center;
+    text-decoration: none;
+    color: var(--app-color-dark);
 
     border-radius: 50%;
   }
 
-  button:hover {
+  a:hover {
     background-color: hsla(var(--app-color-dark-hsl), 0.2);
   }
 </style>

@@ -7,8 +7,9 @@ const config = {
   preprocess: preprocess(),
   kit: {
     target: '#svelte',
-    adapter: staticAdapter(),
-    router: false,
+    adapter: staticAdapter({}),
+    prerender: { pages: ['/en', '/hi', '/'] },
+    router: true,
   },
 };
 
