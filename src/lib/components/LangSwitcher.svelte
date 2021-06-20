@@ -14,14 +14,14 @@
 
 <style lang="scss">
   a {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 
     width: 2.3rem;
     height: 2.3rem;
 
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
     color: var(--app-color-dark);

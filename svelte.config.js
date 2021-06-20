@@ -9,7 +9,6 @@ const config = {
     target: '#svelte',
     adapter: staticAdapter({}),
     prerender: { pages: ['/en', '/hi', '/'] },
-    router: true,
   },
 };
 

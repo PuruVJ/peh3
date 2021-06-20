@@ -13,7 +13,7 @@
     <img src="/PEH-logo-final.png" alt="Puru Eye Hospital logo" />
   </div>
   <span class="spacer" />
-  <span>
+  <span style="display: flex;">
     <LangSwitcher />
     <ThemeSwitcher />
   </span>
