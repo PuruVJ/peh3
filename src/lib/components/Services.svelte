@@ -3,7 +3,7 @@
   import ServiceBox from './ServiceBox.svelte';
 </script>
 
-<section class="container width-60">
+<section class="container">
   <h2>{$i18n.servicesHeading}</h2>
   <div class="center-box">
     {#each Object.entries($i18n.services) as [key, val] (val.title)}
