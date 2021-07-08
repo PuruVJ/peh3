@@ -10,16 +10,16 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.13",
-    "@sveltejs/kit": "^1.0.0-next.115",
-    "sass": "^1.34.1",
-    "svelte-check": "^2.1.0",
+    "@sveltejs/kit": "^1.0.0-next.123",
+    "sass": "^1.35.2",
+    "svelte-check": "^2.2.1",
     "svelte-preprocess": "^4.7.3",
-    "typescript": "^4.3.4"
+    "typescript": "^4.3.5"
   },
   "type": "module",
   "dependencies": {
     "@mdi/js": "^5.9.55",
-    "svelte": "^3.38.2",
-    "svelte-intersection-observer": "^0.7.0"
+    "svelte": "^3.38.3",
+    "svelte-intersection-observer": "^0.7.1"
   }
 }
