@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { mdiMoonFull, mdiWhiteBalanceSunny } from '@mdi/js';
-  import { onMount } from 'svelte';
   import { theme } from '$lib/stores/theme.store';
+  import { mdiWhiteBalanceSunny } from '@mdi/js';
+  import { onMount } from 'svelte';
   import Icon from './Icon.svelte';
   import MoonSvg from './svg/MoonSVG.svelte';
 

@@ -1,25 +1,23 @@
 {
   "name": "peh3",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "start": "svelte-kit dev",
     "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+    "preview": "svelte-kit preview"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.13",
-    "@sveltejs/kit": "^1.0.0-next.123",
-    "sass": "^1.35.2",
-    "svelte-check": "^2.2.1",
-    "svelte-preprocess": "^4.7.3",
+    "@sveltejs/kit": "^1.0.0-next.137",
+    "sass": "^1.36.0",
+    "svelte-preprocess": "^4.7.4",
     "typescript": "^4.3.5"
   },
-  "type": "module",
   "dependencies": {
     "@mdi/js": "^5.9.55",
     "svelte": "^3.38.3",
-    "svelte-intersection-observer": "^0.7.1"
+    "svelte-intersection-observer": "^0.7.1",
+    "svelte-local-storage-store": "^0.2.3"
   }
 }

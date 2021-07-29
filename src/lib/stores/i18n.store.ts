@@ -4,7 +4,9 @@ import { derived, writable } from 'svelte/store';
 
 export type Language = 'hi' | 'en';
 
-export const language = writable<Language>('hi');
+export const language = writable<Language>('en');
+
+//
 
 export const i18n = derived(language, ($lang) => translations[$lang]);
 

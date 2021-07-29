@@ -1,7 +1,18 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
-const theme = writable<'morning' | 'night'>('morning');
+export type Theme = 'morning' | 'night';
+
+const theme = writable<'morning' | 'night'>('morning', (set) => {
+  // This is run in the very beginning, so no value here yet. Let's change that
+  if (!browser) return;
+
+  // Initialize with localstorage
+  const localTheme = localStorage.getItem<Theme>('theme');
+  const browserPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  set(localTheme || (browserPrefersDark ? 'night' : 'morning'));
+});
 
 export { theme };
 

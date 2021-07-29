@@ -1,15 +1,25 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import { language } from '$lib/stores/i18n.store';
+
+  function switchLanguage() {
+    const newVal = $language === 'en' ? 'hi' : 'en';
+
+    goto(newVal, {
+      noscroll: true,
+      keepfocus: true,
+    });
+
+    document.documentElement.lang = newVal;
+  }
 </script>
 
-<svelte:window lang={$language} />
-
-<a href="/{$language === 'en' ? 'hi' : 'en'}" sveltekit:noscroll>
+<button on:click={switchLanguage}>
   {$language === 'hi' ? 'A' : 'अ'}
-</a>
+</button>
 
-<style lang="scss">
-  a {
+<style>
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +35,7 @@
     border-radius: 50%;
   }
 
-  a:hover {
+  button:hover {
     background-color: hsla(var(--app-color-dark-hsl), 0.2);
   }
 </style>
