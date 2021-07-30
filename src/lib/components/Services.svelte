@@ -33,12 +33,14 @@
     {#each Object.keys($i18n.services) as key}
       <ServiceBox>
         <span slot="title">{$i18n.services[key].title}</span>
-        <span slot="content">
+        <article slot="content">
           <p class="description">
             {$i18n.services[key].description}
           </p>
-          <button class="open-service" on:click={() => openServiceInfo(key)}>Read more</button>
-        </span>
+          <button class="open-service" on:click={() => openServiceInfo(key)}>
+            {$i18n.servicesReadMoreButton}
+          </button>
+        </article>
       </ServiceBox>
     {/each}
   </div>

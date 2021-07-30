@@ -5,17 +5,13 @@
 
   export let serviceInfoOpened: string | null = null;
 
-  let closeDialogButtonEl: HTMLButtonElement;
-
   function closeServiceInfo() {
     serviceInfoOpened = null;
   }
-
-  $: serviceInfoOpened !== null && closeDialogButtonEl?.focus();
 </script>
 
 {#if serviceInfoOpened}
-  <section in:fadeIn out:fadeOut class="info-dialog-overlay" on:click={closeServiceInfo}>
+  <section in:fadeIn out:fadeOut class="container" on:click={closeServiceInfo}>
     <div
       tabindex={0}
       role="dialog"
@@ -26,22 +22,21 @@
       on:click|stopPropagation={() => {}}
     >
       <h1 id="info-title">{$i18n.services[serviceInfoOpened].title}</h1>
-      <p id="info-description">
-        {$i18n.services[serviceInfoOpened].description}
-      </p>
-      <button
-        class="close-dialog-button"
-        bind:this={closeDialogButtonEl}
-        on:click={closeServiceInfo}
-      >
-        Close
+      <article>
+        <p id="info-description">
+          {$i18n.services[serviceInfoOpened].description}
+        </p>
+      </article>
+      <!-- svelte-ignore a11y-autofocus -->
+      <button autofocus class="close-dialog-button" on:click={closeServiceInfo}>
+        {$i18n.close}
       </button>
     </div>
   </section>
 {/if}
 
 <style lang="scss">
-  .info-dialog-overlay {
+  .container {
     position: fixed;
     top: 0;
     left: 0;
@@ -56,11 +51,17 @@
 
     overflow: hidden;
 
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: hsla(var(--app-color-dark-hsl), 0.6);
   }
 
   .info-dialog {
-    width: 40%;
+    width: 45%;
+
+    padding: 1rem 1.5rem;
+
+    background-color: var(--app-color-light);
+
+    border-radius: 1rem;
 
     p {
       font-size: 1.3rem;
@@ -93,14 +94,18 @@
   }
 
   @supports (backdrop-filter: blur(10px)) {
-    .info-dialog-overlay {
-      background-color: transparent !important;
+    .container {
+      background-color: transparent;
       backdrop-filter: blur(40px);
+    }
+
+    .info-dialog {
+      background-color: transparent;
     }
   }
 
   @media screen and (max-width: 1200px) {
-    .info-dialog-overlay {
+    .container {
       align-items: flex-start;
 
       overflow-y: auto;

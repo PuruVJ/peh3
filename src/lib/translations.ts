@@ -3,6 +3,7 @@ const english = {
   phacoSurgeryCenter: 'Phaco Surgery & Lasik center',
   bookAppointment: 'Book an Appointment',
   servicesHeading: 'Services',
+  servicesReadMoreButton: 'Read More',
   services: {
     phaco: {
       title: 'Phaco',
@@ -14,6 +15,7 @@ const english = {
     },
     glaucoma: { title: `Glaucoma`, description: `` },
   },
+  close: 'Close',
 };
 
 const hindi: typeof english = {
@@ -21,6 +23,7 @@ const hindi: typeof english = {
   phacoSurgeryCenter: 'फेको सर्जरी एवं लेसिक सेण्टर',
   bookAppointment: 'अपॉइंटमेंट बुक करें',
   servicesHeading: 'सुविधाएँ',
+  servicesReadMoreButton: 'अधिक पढ़ें',
   services: {
     phaco: {
       title: 'फेको',
@@ -35,6 +38,7 @@ const hindi: typeof english = {
       description: `ग्लूकोमा अथवा काला पानी से आंख की रोशनी हमेशा के लिए खत्म हो सकती है जिसे किसी भी तरीके से वापिस नही लाया जा सकता है। इस बीमारी में आंख का प्रेशर बढ़ जाता है, आंख की नस की ब्लड सप्लाई कम हो जाती है और आंख की नस सूख जाती है जिससे आंख की रोशनी हमेशा के लिए खत्म हो जाती है। यह एक खतरनाक बीमारी है क्योंकि अधिकांश मरीजों में इसके कोई लक्षण नहीं होते हैं और अचानक मरीज को पता चलता है कि उनकी आंख की रोशनी खत्म हो गई है।डायबिटीज के मरीजों में, आंख में चोट लगने से, परिवार में किसी को काला पानी होने पर एवम ज्यादा नंबर के चश्मे पहनने वाले व्यक्तियों में यह बीमारी होने की संभावना ज्यादा रहती है। इसीलिए हमारा सुझाव है कि 40 वर्ष से अधिक आयु के सभी व्यक्तियों को वर्ष में एक बार अपनी आंखों की संपूर्ण जांच अवश्य करानी चाहिए। यदि इस बीमारी का जल्दी पता चल जाता है तो दवाइयों द्वारा इसका इलाज संभव है। दवाइयों से फायदा नहीं होने पर लेजर अथवा ऑपरेशन द्वारा भी इसका इलाज संभव है।`,
     },
   },
+  close: 'बंद करे',
 };
 
 export const translations = {

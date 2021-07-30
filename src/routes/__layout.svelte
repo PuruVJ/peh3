@@ -5,6 +5,4 @@
 
 <Nav />
 
-<br /><br /><br /><br />
-
 <slot />

@@ -14,8 +14,10 @@
   }
 </script>
 
+<!-- अ -->
+
 <button on:click={switchLanguage}>
-  {$language === 'hi' ? 'A' : 'अ'}
+  {$language === 'hi' ? 'A' : 'हिं'}
 </button>
 
 <style>
