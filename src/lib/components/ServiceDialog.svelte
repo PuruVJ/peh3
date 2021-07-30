@@ -17,6 +17,7 @@
 {#if serviceInfoOpened}
   <section in:fadeIn out:fadeOut class="info-dialog-overlay" on:click={closeServiceInfo}>
     <div
+      tabindex={0}
       role="dialog"
       aria-labelledby="info-title"
       aria-describedby="info-description"
