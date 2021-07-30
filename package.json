@@ -9,15 +9,14 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.13",
-    "@sveltejs/kit": "^1.0.0-next.137",
+    "@sveltejs/kit": "^1.0.0-next.139",
     "sass": "^1.36.0",
     "svelte-preprocess": "^4.7.4",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "@mdi/js": "^5.9.55",
-    "svelte": "^3.38.3",
-    "svelte-intersection-observer": "^0.7.1",
-    "svelte-local-storage-store": "^0.2.3"
+    "svelte": "^3.41.0",
+    "svelte-intersection-observer": "^0.7.1"
   }
 }
