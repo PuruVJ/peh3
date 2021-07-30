@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   import CtaButton from '$lib/components/CTAButton.svelte';
-  import Services from '$lib/components/Services.svelte';
+  import Services from '$lib/components/services/Services.svelte';
   import type { Language } from '$lib/stores/i18n.store';
   import { i18n, language } from '$lib/stores/i18n.store';
   import type { Load } from '@sveltejs/kit';
