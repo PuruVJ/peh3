@@ -3,7 +3,7 @@
 
   import { onMount } from 'svelte';
 
-  const imagesList = ['0', '2', '3', '4', '5', '6', '7'];
+  const imagesList = ['1', '2', '3', '4', '5', '6', '7'];
 
   let currentImage: string = imagesList[0];
 
