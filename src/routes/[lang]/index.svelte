@@ -13,6 +13,8 @@
 </script>
 
 <script lang="ts">
+  import Gallery from '$lib/components/gallery/Gallery.svelte';
+
   export let lang: Language;
 
   $: $language = lang;
@@ -80,6 +82,14 @@
       </p>
     </div>
   </section>
+
+  <br />
+  <br />
+  <hr />
+  <br />
+  <br />
+
+  <Gallery />
 </main>
 
 <style lang="scss">

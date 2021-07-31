@@ -1,19 +1,24 @@
-import { sineIn } from "svelte/easing";
+import { sineIn, sineOut } from 'svelte/easing';
 
-let duration = 150;
-let delay = duration;
+export function fadeIn(
+  _: HTMLElement,
+  { duration = 150, delay = duration }: SvelteTransitionConfig
+): SvelteTransitionReturnType {
+  return {
+    duration: duration + 10,
+    delay,
+    easing: sineIn,
+    css: (t) => `opacity: ${t}`,
+  };
+}
 
-let delayZero = 0;
-
-export const fadeIn = (_, _1) => ({
-  duration: duration + 10,
-  delay,
-  easing: sineIn,
-  css: (t) => `opacity: ${t}`,
-});
-export const fadeOut = (_, _1) => ({
-  duration,
-  delayZero,
-  easing: sineIn,
-  css: (t) => `opacity: ${t}`,
-});
+export function fadeOut(
+  _: HTMLElement,
+  { duration = 150 }: SvelteTransitionConfig
+): SvelteTransitionReturnType {
+  return {
+    duration,
+    easing: sineOut,
+    css: (t) => `opacity: ${t}`,
+  };
+}
