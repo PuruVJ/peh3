@@ -19,7 +19,7 @@
     });
   }
 
-  $: if (browser) currentImagePromise = loadImage(`/gallery/${currentImage}.jpg`);
+  $: if (browser) currentImagePromise = loadImage(`/gallery/optimized/${currentImage}-large.jpg`);
 
   onMount(() => {
     const interval = setInterval(() => {
