@@ -1,15 +1,14 @@
 <script lang="ts">
+  import { browser } from '$app/env';
   import { fadeIn, fadeOut } from '$lib/fade';
-
   import { onMount } from 'svelte';
 
   const imagesList = ['1', '2', '3', '4', '5', '6', '7'];
 
   let currentImage: string = imagesList[0];
-
   let currentImagePromise: Promise<void>;
 
-  function prefetch(imgPath: string): Promise<void> {
+  function loadImage(imgPath: string): Promise<void> {
     return new Promise((resolve, reject) => {
       const image = new Image();
 
@@ -20,7 +19,7 @@
     });
   }
 
-  $: currentImagePromise = prefetch(`/gallery/${currentImage}.jpg`);
+  $: if (browser) currentImagePromise = loadImage(`/gallery/${currentImage}.jpg`);
 
   onMount(() => {
     const interval = setInterval(() => {
@@ -35,7 +34,7 @@
   <div class="stage">
     {#await currentImagePromise then _}
       <figure in:fadeIn={{ delay: 800, duration: 500 }} out:fadeOut={{ duration: 500 }}>
-        <img src="/gallery/{currentImage}.jpg" alt="Gallery" />
+        <img src="/gallery/optimized/{currentImage}-large.jpg" alt="Gallery" />
       </figure>
     {/await}
   </div>
@@ -46,7 +45,7 @@
       <figure>
         <img
           class:selected={currentImage === image}
-          src="/gallery/{image}.jpg"
+          src="/gallery/optimized/{image}-small.jpg"
           alt="Gallery item thumbnail"
         />
       </figure>
