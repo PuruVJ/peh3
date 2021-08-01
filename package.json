@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@mdi/js": "^5.9.55",
+    "lazysizes": "^5.3.2",
     "svelte": "^3.41.0",
     "svelte-intersection-observer": "^0.7.1"
   }

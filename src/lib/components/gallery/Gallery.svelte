@@ -1,12 +1,15 @@
 <script lang="ts">
   import { browser } from '$app/env';
+  import { lazy } from '$lib/actions/lazy';
   import { fadeIn, fadeOut } from '$lib/fade';
-  import { onMount } from 'svelte';
+  import { createIntervalStore } from '$lib/stores/interval.store';
 
   const imagesList = ['1', '2', '3', '4', '5', '6', '7'];
 
   let currentImage: string = imagesList[0];
   let currentImagePromise: Promise<void>;
+
+  const interval = createIntervalStore(6000);
 
   function loadImage(imgPath: string): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -19,23 +22,23 @@
     });
   }
 
+  function nextImage() {
+    currentImage = imagesList[(imagesList.indexOf(currentImage) + 1) % imagesList.length];
+  }
+
   $: if (browser) currentImagePromise = loadImage(`/gallery/optimized/${currentImage}-large.jpg`);
 
-  onMount(() => {
-    const interval = setInterval(() => {
-      currentImage = imagesList[(imagesList.indexOf(currentImage) + 1) % imagesList.length];
-    }, 6000);
-
-    return () => clearInterval(interval);
-  });
+  $: $interval, nextImage();
 </script>
 
 <section class="gallery">
   <div class="stage">
     {#await currentImagePromise then _}
-      <figure in:fadeIn={{ delay: 800, duration: 500 }} out:fadeOut={{ duration: 500 }}>
-        <img src="/gallery/optimized/{currentImage}-large.jpg" alt="Gallery" />
-      </figure>
+      {#key currentImage}
+        <figure in:fadeIn={{ delay: 800, duration: 500 }} out:fadeOut={{ duration: 500 }}>
+          <img src="/gallery/optimized/{currentImage}-large.jpg" alt="Gallery" />
+        </figure>
+      {/key}
     {/await}
   </div>
 
@@ -47,6 +50,7 @@
           class:selected={currentImage === image}
           src="/gallery/optimized/{image}-small.jpg"
           alt="Gallery item thumbnail"
+          use:lazy
         />
       </figure>
     {/each}
