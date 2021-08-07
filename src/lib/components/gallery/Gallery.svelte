@@ -6,13 +6,13 @@
 
   const imagesList = ['1', '2', '3', '4', '5', '6', '7'];
 
-  let currentImage: string = imagesList[0];
+  let currentImage = imagesList[0];
   let currentImagePromise: Promise<void>;
 
-  const interval = createIntervalStore(6000);
+  let interval = createIntervalStore(6000);
 
-  function loadImage(imgPath: string): Promise<void> {
-    return new Promise((resolve, reject) => {
+  const loadImage = (imgPath: string): Promise<void> =>
+    new Promise((resolve, reject) => {
       const image = new Image();
 
       image.src = imgPath;
@@ -20,7 +20,6 @@
       image.onload = () => resolve();
       image.onerror = reject;
     });
-  }
 
   function nextImage() {
     currentImage = imagesList[(imagesList.indexOf(currentImage) + 1) % imagesList.length];
@@ -28,7 +27,8 @@
 
   $: if (browser) currentImagePromise = loadImage(`/gallery/optimized/${currentImage}-large.jpg`);
 
-  $: $interval, nextImage();
+  let imageChangeCount = 0;
+  $: $interval, imageChangeCount++ && nextImage();
 </script>
 
 <section class="gallery">
@@ -47,6 +47,11 @@
     {#each imagesList as image}
       <figure>
         <img
+          on:click={() => {
+            currentImage = image;
+            imageChangeCount = 0;
+            interval = createIntervalStore(6000);
+          }}
           class:selected={currentImage === image}
           src="/gallery/optimized/{image}-small.jpg"
           alt="Gallery item thumbnail"
@@ -115,6 +120,14 @@
       width: 100%;
       height: 100%;
       max-height: 6.3rem;
+
+      transition: transform 200ms ease-in, box-shadow 200ms ease-in;
+
+      &.selected {
+        transform: scale(0.9);
+
+        box-shadow: 0 0 0 0.4rem var(--app-color-dark);
+      }
     }
   }
 </style>
