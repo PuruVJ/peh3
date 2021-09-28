@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
   import CtaButton from '$lib/components/CTAButton.svelte';
+  import Gallery from '$lib/components/gallery/Gallery.svelte';
   import Services from '$lib/components/services/Services.svelte';
   import type { Language } from '$lib/stores/i18n.store';
   import { i18n, language } from '$lib/stores/i18n.store';
@@ -13,8 +14,6 @@
 </script>
 
 <script lang="ts">
-  import Gallery from '$lib/components/gallery/Gallery.svelte';
-
   export let lang: Language;
 
   $: $language = lang;
