@@ -1,9 +1,9 @@
 <script lang="ts">
   import { theme } from '$lib/stores/theme.store';
-  import { mdiWhiteBalanceSunny } from '@mdi/js';
+  import SunIcon from '~icons/ic/sharp-wb-sunny';
   import { onMount } from 'svelte';
   import Icon from './Icon.svelte';
-  import MoonSvg from './svg/MoonSVG.svelte';
+  import MoonIcon from '~icons/majesticons/moon';
 
   // List of themes
   const themes: ('morning' | 'night')[] = ['morning', 'night'];
@@ -36,9 +36,9 @@
 
 <button aria-label={themes[currentThemeIndex]} on:click={nextTheme}>
   {#if currentThemeIndex === 0}
-    <Icon path={mdiWhiteBalanceSunny} />
+    <SunIcon />
   {:else}
-    <MoonSvg />
+    <MoonIcon />
   {/if}
 </button>
 
@@ -47,7 +47,7 @@
     width: 2.3rem;
     height: 2.3rem;
 
-    fill: var(--app-color-dark);
+    font-size: 1.2rem;
 
     border-radius: 50%;
 

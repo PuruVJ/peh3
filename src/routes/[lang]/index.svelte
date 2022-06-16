@@ -6,7 +6,7 @@
   import { i18n, language } from '$lib/stores/i18n.store';
   import type { Load } from '@sveltejs/kit';
 
-  export const load: Load = ({ page: { params } }) => {
+  export const load: Load = ({ params }) => {
     if (!['en', 'hi'].includes(params.lang)) return { redirect: '/en', status: 301 };
 
     return { props: { lang: params.lang } };

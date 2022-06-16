@@ -1,12 +1,10 @@
-<script>
+<script lang="ts">
   import { i18n } from '$lib/stores/i18n.store';
-
-  import { mdiPhone } from '@mdi/js';
-  import Icon from './Icon.svelte';
+  import PhoneIcon from '~icons/ic/round-phone';
 </script>
 
 <a href="tel:+919414065020">
-  <span> <Icon fill="var(--app-color-dark-contrast)" path={mdiPhone} /></span>
+  <span> <PhoneIcon /> </span>
   {$i18n.bookAppointment}
 </a>
 

@@ -8,16 +8,18 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.20",
-    "@sveltejs/kit": "^1.0.0-next.175",
-    "sass": "^1.42.1",
-    "svelte-preprocess": "^4.9.5",
-    "typescript": "^4.4.3"
+    "@iconify-json/ic": "^1.1.4",
+    "@iconify-json/majesticons": "^1.1.1",
+    "@sveltejs/adapter-static": "^1.0.0-next.34",
+    "@sveltejs/kit": "^1.0.0-next.350",
+    "sass": "^1.52.3",
+    "svelte-preprocess": "^4.10.7",
+    "typescript": "^4.7.3",
+    "unplugin-icons": "^0.14.4"
   },
   "dependencies": {
-    "@mdi/js": "^5.9.55",
     "lazysizes": "^5.3.2",
-    "svelte": "^3.43.0",
-    "svelte-intersection-observer": "^0.7.1"
+    "svelte": "^3.48.0",
+    "svelte-intersection-observer": "^0.10.0"
   }
 }
