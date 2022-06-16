@@ -8,7 +8,7 @@ const config = {
   preprocess: preprocess(),
   kit: {
     adapter: staticAdapter({}),
-    prerender: { entries: ['/en', '/hi', '/'] },
+    prerender: { entries: ['/en', '/hi', '/'], default: true },
 
     vite: {
       plugins: [
